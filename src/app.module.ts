@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule} from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RoleModule } from 'modules/role/role.modules';
+import { UserModule } from 'modules/user/user.module';
 import envConfig from './config/env';
 import { getDatabaseConfigConnection } from './config/env/connection';
-import { UsersModule } from './users/users.module';
 
 const databaseOptions = {
   ...getDatabaseConfigConnection(),
@@ -15,7 +16,8 @@ const databaseOptions = {
       isGlobal: true,
     }),
     TypeOrmModule.forRoot(databaseOptions),
-    UsersModule,
+    UserModule,
+    RoleModule,
   ],
 })
 export class AppModule {}
