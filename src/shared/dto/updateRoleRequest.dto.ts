@@ -12,14 +12,4 @@ export class UpdateRoleRequestDTO {
     @IsString()
     @IsNotEmpty()
     name: string;
-
-    @ApiProperty()
-    @IsString()
-    @IsNotEmpty()
-    email: string;
-
-    @ApiProperty()
-    @IsString()
-    @IsNotEmpty()
-    password: string;
 }
