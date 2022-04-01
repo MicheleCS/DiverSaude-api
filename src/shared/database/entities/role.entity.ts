@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { User } from './user.entity';
 
 @Entity('roles')
 export class Role {
@@ -9,4 +10,7 @@ export class Role {
   @ApiProperty()
   @Column()
   name: string;
+
+  @ManyToOne(() => User, (user) => user.roles)
+  public user?: User;
 }
