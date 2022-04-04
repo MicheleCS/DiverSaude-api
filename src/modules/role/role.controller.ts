@@ -20,7 +20,7 @@ export class RoleController {
       return instanceToInstance(role);
     }
 
-    @UseGuards(JwtAuthGuard)
+    //@UseGuards(JwtAuthGuard)
     @Get()
     @HttpCode(200)
     findAll(){
