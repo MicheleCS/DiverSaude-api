@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'shared/database/entities/user.entity';
 import { CreateUserRequestDTO } from 'shared/dto/createUserRequest.dto';
 import { GetAllUserRequestDTO } from 'shared/dto/getAllUserRequest.dto';
-import { UpdateUserRequestDTO } from 'shared/dto/UpdateUserRequest.dto';
+import { UpdateUserRequestDTO } from 'shared/dto/updateUserRequest.dto';
 import { BcryptProvider } from 'shared/providers/encrypt/bcrypt.provider';
 import { UserRepository } from 'shared/repositories/user.repository';
 import { EntityNotFoundError } from 'typeorm';

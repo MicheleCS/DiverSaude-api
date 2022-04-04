@@ -3,7 +3,7 @@ import { ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "modules/auth/jwt-auth.guards";
 import { instanceToInstance } from "class-transformer";
 import { CreateUserRequestDTO } from "shared/dto/createUserRequest.dto";
-import { UpdateUserRequestDTO } from "shared/dto/UpdateUserRequest.dto";
+import { UpdateUserRequestDTO } from "shared/dto/updateUserRequest.dto";
 import { UserService } from "./user.service";
 import { GetAllUserRequestDTO } from "shared/dto/getAllUserRequest.dto";
 
