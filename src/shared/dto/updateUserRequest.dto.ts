@@ -29,27 +29,31 @@ export class UpdateUserRequestDTO {
 
     @ApiProperty()
     @IsNotEmpty()
-    cellPhone: number;
+    gender: string;
 
     @ApiProperty()
-    @IsNotEmpty()
-    street: string;
+    @IsEmpty()
+    cellPhone?: number;
 
     @ApiProperty()
-    @IsNotEmpty()
-    number: number;
+    @IsEmpty()
+    street?: string;
 
     @ApiProperty()
-    @IsNotEmpty()
-    neighborhood: string;
+    @IsEmpty()
+    number?: number;
 
     @ApiProperty()
-    @IsNotEmpty()
-    city: string;
+    @IsEmpty()
+    neighborhood?: string;
 
     @ApiProperty()
-    @IsNotEmpty()
-    state: string;
+    @IsEmpty()
+    city?: string;
+
+    @ApiProperty()
+    @IsEmpty()
+    state?: string;
 
     @ApiProperty()
     @IsEmpty()
@@ -62,10 +66,6 @@ export class UpdateUserRequestDTO {
     @ApiProperty()
     @IsEmpty()
     phone?: number;
-
-    @ApiProperty()
-    @IsEmpty()
-    gender?: string;
 
     @ApiProperty()
     @IsEmpty()

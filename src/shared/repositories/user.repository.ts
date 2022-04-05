@@ -1,8 +1,8 @@
 import { User } from "shared/database/entities/user.entity";
 import { CreateUserDTO } from "shared/dto/createUser.dto";
-import { GetAllUserRequestDTO } from "shared/dto/getAllUserRequest.dto";
 import { UpdateUserRequestDTO } from "shared/dto/updateUserRequest.dto";
 import { EntityRepository, getRepository, Repository } from "typeorm";
+import { GetAllUserRequestDTO } from "shared/dto/getAllUserRequest.dto";
 
 @EntityRepository(User)
 export class UserRepository extends Repository <User>{

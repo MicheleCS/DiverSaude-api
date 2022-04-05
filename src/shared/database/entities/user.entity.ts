@@ -32,40 +32,45 @@ export class User {
 
   @ApiProperty()
   @IsNotEmpty()
-  @IsNumber()
-  @Column({nullable: false})
-  cellPhone: number;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @Column({nullable: false})
-  street: string;
-  
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  @Column({nullable: false})
-  number: number;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @Column({nullable: false})
-  neighborhood: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @Column({nullable: false})
-  city: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @Column({nullable: false})
-  state: string;
+  @Column({ nullable: false})
+  gender: string;
 
   @ApiProperty()
   @IsNotEmpty()
   @Column('uuid')
   role_id: string;
+
+  @ApiProperty()
+  @IsEmpty()
+  @IsNumber()
+  @Column({nullable: true})
+  cellPhone?: number;
+
+  @ApiProperty()
+  @IsEmpty()
+  @Column({nullable: true})
+  street?: string;
+  
+  @ApiProperty()
+  @IsEmpty()
+  @IsNumber()
+  @Column({nullable: true})
+  number?: number;
+
+  @ApiProperty()
+  @IsEmpty()
+  @Column({nullable: true})
+  neighborhood?: string;
+
+  @ApiProperty()
+  @IsEmpty()
+  @Column({nullable: true})
+  city?: string;
+
+  @ApiProperty()
+  @IsEmpty()
+  @Column({nullable: true})
+  state?: string;
 
   @ApiProperty()
   @IsEmpty()
@@ -82,11 +87,6 @@ export class User {
   @IsNumber()
   @Column({ nullable: true})
   phone?: number;
-
-  @ApiProperty()
-  @IsEmpty()
-  @Column({ nullable: true})
-  gender?: string;
  
   @ApiProperty()
   @IsEmpty()
