@@ -28,8 +28,8 @@ export class UpdateUserRequestDTO {
     cpf: string;
 
     @ApiProperty()
-    @IsNotEmpty()
-    gender: string;
+    @IsEmpty()
+    gender?: string;
 
     @ApiProperty()
     @IsEmpty()

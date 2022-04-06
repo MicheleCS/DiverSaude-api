@@ -32,13 +32,13 @@ export class User {
 
   @ApiProperty()
   @IsNotEmpty()
-  @Column({ nullable: false})
-  gender: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
   @Column('uuid')
   role_id: string;
+
+  @ApiProperty()
+  @IsEmpty()
+  @Column({nullable: true})
+  gender?: string;
 
   @ApiProperty()
   @IsEmpty()

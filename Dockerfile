@@ -12,7 +12,6 @@ COPY .env.production ./.env
 COPY . .
 
 RUN npm run build
-RUN npm run m:generate "initial migration"
 RUN npm run m:run
 
 EXPOSE 3000

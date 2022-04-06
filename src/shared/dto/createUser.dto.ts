@@ -3,7 +3,7 @@ export class CreateUserDTO {
     email: string;
     password: string;
     cpf: string;
-    gender: string;
+    gender?: string;
     cellPhone?:number;
     crmCrp?: string;
     specialty?: string;
