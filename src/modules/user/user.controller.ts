@@ -27,7 +27,6 @@ export class UserController {
       return await this.userService.findAll(dto);
     }
 
-    
     @UseGuards(JwtAuthGuard)
     @Get(':id')
     @HttpCode(200)

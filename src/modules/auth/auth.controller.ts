@@ -9,7 +9,7 @@ export class AuthController {
 
     @UseGuards(LocalAuthGuard)
     @Post('login')
-    async login(@Request() LoginDTO: LoginDTO) {
-        return await this.authService.login(LoginDTO);
+    async login(@Request() loginDTO: LoginDTO) {
+        return await this.authService.login(loginDTO);
     }
 }
