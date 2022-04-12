@@ -44,6 +44,12 @@ export class UserRepository extends Repository <User>{
     { id },
     );
   }
+
+  async findByEmail(email: string): Promise<User | undefined> {
+    return await this.findOne(
+    { email },
+    );
+  } 
     
   async updateUser(dto: UpdateUserRequestDTO): Promise<void> {
     await this.update(dto.id, dto);

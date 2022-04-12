@@ -1,16 +1,26 @@
 import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { UserService } from 'modules/user/user.service';
-import * as bcrypt from 'bcrypt'
 import { JwtService } from '@nestjs/jwt';
 import { BcryptProvider } from 'shared/providers/encrypt/bcrypt.provider';
+import { InjectRepository } from '@nestjs/typeorm';
+import { UserRepository } from 'shared/repositories/user.repository';
+import { LoginDTO } from 'shared/dto/login.dto';
+import { RoleRepository } from 'shared/repositories/role.repository';
 
 @Injectable()
 export class AuthService {
     constructor(
+      @Inject(UserService)
       private userService: UserService,
+      @Inject(JwtService)
       private jwtService: JwtService,
       @Inject('ENCRYPT_PROVIDER') 
-      private encryption: BcryptProvider) {}
+      private encryption: BcryptProvider,
+      @InjectRepository(UserRepository)
+      private userRepository: UserRepository,
+      @InjectRepository(RoleRepository)
+      private roleRepository: RoleRepository)
+     {}
 
   async validateUser(username: string, password: string): Promise<any> {
     const user = await this.userService.getByEmail(username);
@@ -21,10 +31,14 @@ export class AuthService {
     return true
   } 
 
-  async login(user: any) {
-    const payload = { email: user.email, sub: user.userId };
+  async login(user: LoginDTO) {
+    const userFinded = await this.userRepository.findByEmail(user.email);
+    const roles = await this.roleRepository.findOneRole(userFinded.role_id)
+    const payload = { email: user.email, sub: userFinded.id };
+    const token = await this.jwtService.sign(payload);
     return {
-      access_token: this.jwtService.sign(payload),
+      access_token: token,
+      userRole: roles.name
     };
   }
 }

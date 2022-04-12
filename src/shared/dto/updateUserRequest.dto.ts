@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsEmpty, IsNotEmpty, IsString } from "class-validator";
+import { IsEmpty, IsNotEmpty, IsNumber, IsString } from "class-validator";
 
 export class UpdateUserRequestDTO {
 
@@ -10,22 +10,22 @@ export class UpdateUserRequestDTO {
 
     @ApiProperty()
     @IsString()
-    @IsNotEmpty()
-    name: string;
+    @IsEmpty()
+    name?: string;
 
     @ApiProperty()
     @IsString()
-    @IsNotEmpty()
-    email: string;
+    @IsEmpty()
+    email?: string;
 
     @ApiProperty()
     @IsString()
-    @IsNotEmpty()
-    password: string;
+    @IsEmpty()
+    password?: string;
 
     @ApiProperty()
-    @IsNotEmpty()
-    cpf: string;
+    @IsEmpty()
+    cpf?: string;
 
     @ApiProperty()
     @IsEmpty()
@@ -90,4 +90,14 @@ export class UpdateUserRequestDTO {
     @ApiProperty()
     @IsEmpty()
     linkedin?: string;
+
+    @ApiProperty()
+    @IsEmpty()
+    @IsNumber()
+    assessment?: number;
+
+    @ApiProperty()
+    @IsEmpty()
+    @IsNumber()
+    assessmentSum?: number;
 }

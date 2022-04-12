@@ -119,6 +119,26 @@ export class User {
   @Column({ nullable: true})
   linkedin?: string;
 
+  @ApiProperty()
+  @IsEmpty()
+  @IsNumber()
+  @Column({ nullable: true, default: 0 })
+  assessment?: number;
+
+  @ApiProperty()
+  @IsEmpty()
+  @IsNumber()
+  @Column({ nullable: true})
+  assessmentSum?: number;
+
+  @ApiProperty()
+  @IsEmpty()
+  @IsNumber()
+  @Column({ nullable: true, type: 'float'})
+  average?: number;
+
+
+
 
   @OneToMany(() => Role, (Role) => Role.user)
   @JoinColumn({ name: 'role_id' })

@@ -6,6 +6,7 @@ import { CreateUserRequestDTO } from "shared/dto/createUserRequest.dto";
 import { UpdateUserRequestDTO } from "shared/dto/updateUserRequest.dto";
 import { UserService } from "./user.service";
 import { GetAllUserRequestDTO } from "shared/dto/getAllUserRequest.dto";
+import { EvaluateDTO } from "shared/dto/evaluate.dto";
 
 
 @ApiTags('users')
@@ -39,6 +40,13 @@ export class UserController {
     @HttpCode(204)
     async update(@Body() updateUserRequestDTO: UpdateUserRequestDTO) {
       await this.userService.update( updateUserRequestDTO);
+    }
+
+    @UseGuards(JwtAuthGuard)
+    @Patch('evaluate')
+    @HttpCode(204)
+    async evaluate(@Body() evaluateDTO: EvaluateDTO) {
+      await this.userService.evaluate( evaluateDTO);
     }
 
     @UseGuards(JwtAuthGuard)

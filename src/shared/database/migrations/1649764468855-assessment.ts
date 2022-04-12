@@ -1,10 +1,11 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class migrationUsuario1649201842627 implements MigrationInterface {
-    name = 'migrationUsuario1649201842627'
+export class assessment1649764468855 implements MigrationInterface {
+    name = 'assessment1649764468855'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        
+        await queryRunner.query(`ALTER TABLE "users" ADD "assessment" integer`);
+        await queryRunner.query(`ALTER TABLE "users" ADD "assessmentSum" integer`);
         await queryRunner.query(`ALTER TABLE "users" ALTER COLUMN "cellPhone" DROP NOT NULL`);
         await queryRunner.query(`ALTER TABLE "users" ALTER COLUMN "street" DROP NOT NULL`);
         await queryRunner.query(`ALTER TABLE "users" ALTER COLUMN "number" DROP NOT NULL`);
@@ -20,6 +21,8 @@ export class migrationUsuario1649201842627 implements MigrationInterface {
         await queryRunner.query(`ALTER TABLE "users" ALTER COLUMN "number" SET NOT NULL`);
         await queryRunner.query(`ALTER TABLE "users" ALTER COLUMN "street" SET NOT NULL`);
         await queryRunner.query(`ALTER TABLE "users" ALTER COLUMN "cellPhone" SET NOT NULL`);
+        await queryRunner.query(`ALTER TABLE "users" DROP COLUMN "assessmentSum"`);
+        await queryRunner.query(`ALTER TABLE "users" DROP COLUMN "assessment"`);
     }
 
 }
