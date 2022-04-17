@@ -19,4 +19,5 @@ export class CreateUserDTO {
     healthPlan?: string;
     bathroomSpecific?: boolean;
     linkedin?: string;
+    attendance?:string;
 }

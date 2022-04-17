@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsEmpty, IsNotEmpty, IsString } from "class-validator";
+import { IsBoolean, IsEmpty, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 import { Column } from "typeorm";
 
 export class CreateUserRequestDTO {
@@ -23,66 +23,86 @@ export class CreateUserRequestDTO {
     cpf: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
     gender?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsNumber()
+    @IsOptional()
     cellPhone?: number;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     street?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsNumber()
+    @IsOptional()
     number?: number;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     neighborhood?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     city?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     state?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     crmCrp?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     specialty?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsNumber()
+    @IsOptional()
     phone?: number;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsNumber()
+    @IsOptional()
     value?: number;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     description?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     courses?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     healthPlan?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsBoolean()
+    @IsOptional()
     bathroomSpecific?: boolean;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     linkedin?: string;
+
+    @ApiProperty()
+    @IsString()
+    @IsOptional()
+    attendance?: string;
 }

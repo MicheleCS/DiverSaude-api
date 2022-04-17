@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, Query, Request, UseGuards } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, Query, Request, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "modules/auth/jwt-auth.guards";
 import { instanceToInstance } from "class-transformer";
@@ -16,6 +16,11 @@ export class UserController {
 
     @Post()
     @HttpCode(201)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async create(@Body() dto: CreateUserRequestDTO) {
       const user = await this.userService.create(dto);
       return instanceToInstance(user);
@@ -24,6 +29,11 @@ export class UserController {
     @UseGuards(JwtAuthGuard)
     @Get()
     @HttpCode(200)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async findAll(@Query() dto: GetAllUserRequestDTO){
       return await this.userService.findAll(dto);
     }
@@ -31,6 +41,11 @@ export class UserController {
     @UseGuards(JwtAuthGuard)
     @Get(':id')
     @HttpCode(200)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async findOne(@Param('id') id:string) {
       return await this.userService.findOne(id);
     }
@@ -38,6 +53,11 @@ export class UserController {
     @UseGuards(JwtAuthGuard)
     @Patch()
     @HttpCode(204)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async update(@Body() updateUserRequestDTO: UpdateUserRequestDTO) {
       await this.userService.update( updateUserRequestDTO);
     }
@@ -45,6 +65,11 @@ export class UserController {
     @UseGuards(JwtAuthGuard)
     @Patch('evaluate')
     @HttpCode(204)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async evaluate(@Body() evaluateDTO: EvaluateDTO) {
       await this.userService.evaluate( evaluateDTO);
     }
@@ -52,6 +77,11 @@ export class UserController {
     @UseGuards(JwtAuthGuard)
     @Delete(':id')
     @HttpCode(204)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async remove(@Param('id')id: string){
       return await this.userService.remove(id);
     }  

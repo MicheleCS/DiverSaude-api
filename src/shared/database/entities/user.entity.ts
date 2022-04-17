@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
-import { IsEmpty, IsNotEmpty, IsNumber } from 'class-validator';
+import { IsBoolean, IsEmpty, IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from 'typeorm';
 import { Role } from './role.entity';
 
@@ -36,103 +36,101 @@ export class User {
   role_id: string;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({nullable: true})
   gender?: string;
 
   @ApiProperty()
-  @IsEmpty()
   @IsNumber()
   @Column({nullable: true})
   cellPhone?: number;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({nullable: true})
   street?: string;
   
   @ApiProperty()
-  @IsEmpty()
   @IsNumber()
   @Column({nullable: true})
   number?: number;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({nullable: true})
   neighborhood?: string;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({nullable: true})
   city?: string;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({nullable: true})
   state?: string;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({ nullable: true})
   crmCrp?: string;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({ nullable: true})
   specialty?: string;
 
   @ApiProperty()
-  @IsEmpty()
   @IsNumber()
   @Column({ nullable: true})
   phone?: number;
  
   @ApiProperty()
-  @IsEmpty()
   @IsNumber()
   @Column({ nullable: true})
   value?: number;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({ nullable: true})
   description?: string;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({ nullable: true})
   courses?: string;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({ nullable: true})
   healthPlan?: string;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsBoolean()
   @Column({ nullable: true})
   bathroomSpecific?: boolean;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
   @Column({ nullable: true})
   linkedin?: string;
 
   @ApiProperty()
-  @IsEmpty()
+  @IsString()
+  @Column({ nullable: true})
+  attendance?: string;
+
+  @ApiProperty()
   @IsNumber()
   @Column({ nullable: true, default: 0 })
   assessment?: number;
 
   @ApiProperty()
-  @IsEmpty()
   @IsNumber()
   @Column({ nullable: true})
   assessmentSum?: number;
 
   @ApiProperty()
-  @IsEmpty()
   @IsNumber()
   @Column({ nullable: true, type: 'float'})
   average?: number;

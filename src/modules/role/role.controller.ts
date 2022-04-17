@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, UseGuards } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "modules/auth/jwt-auth.guards";
 import { instanceToInstance } from "class-transformer";
@@ -15,14 +15,24 @@ export class RoleController {
 
     @Post()
     @HttpCode(201)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async create(@Body() dto: CreateRoleRequestDTO) {
       const role = await this.roleService.create(dto);
       return instanceToInstance(role);
     }
 
-    //@UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard)
     @Get()
     @HttpCode(200)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     findAll(){
       return this.roleService.findAll();
     }
@@ -30,6 +40,11 @@ export class RoleController {
     @UseGuards(JwtAuthGuard)
     @Get(':id')
     @HttpCode(200)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async findOne(@Param('id') id:string) {
       return await this.roleService.findOne(id);
     }
@@ -37,6 +52,11 @@ export class RoleController {
     @UseGuards(JwtAuthGuard)
     @Patch()
     @HttpCode(204)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async update(@Body() updateRoleRequestDTO: UpdateRoleRequestDTO) {
       await this.roleService.update(updateRoleRequestDTO.id, updateRoleRequestDTO);
     }
@@ -44,6 +64,11 @@ export class RoleController {
     @UseGuards(JwtAuthGuard)
     @Delete(':id')
     @HttpCode(204)
+    @UsePipes(
+      new ValidationPipe({
+        transform: true,
+      }),
+    )
     async remove(@Param('id')id: string){
       return await this.roleService.remove(id);
     }     

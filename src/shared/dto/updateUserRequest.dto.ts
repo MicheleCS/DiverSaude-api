@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsEmpty, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class UpdateUserRequestDTO {
 
@@ -10,94 +10,115 @@ export class UpdateUserRequestDTO {
 
     @ApiProperty()
     @IsString()
-    @IsEmpty()
     name?: string;
 
     @ApiProperty()
     @IsString()
-    @IsEmpty()
     email?: string;
 
     @ApiProperty()
     @IsString()
-    @IsEmpty()
     password?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
     cpf?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     gender?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsNumber()
+    @IsOptional()
     cellPhone?: number;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     street?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsNumber()
+    @IsOptional()
     number?: number;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     neighborhood?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     city?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     state?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     crmCrp?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     specialty?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsNumber()
+    @IsOptional()
     phone?: number;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsNumber()
+    @IsOptional()
     value?: number;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
     description?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     courses?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     healthPlan?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsBoolean()
+    @IsOptional()
     bathroomSpecific?: boolean;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
     linkedin?: string;
 
     @ApiProperty()
-    @IsEmpty()
+    @IsString()
+    @IsOptional()
+    attendance?: string;
+
+    @ApiProperty()
     @IsNumber()
+    @IsOptional()
     assessment?: number;
 
     @ApiProperty()
-    @IsEmpty()
     @IsNumber()
+    @IsOptional()
     assessmentSum?: number;
+
+    @ApiProperty()
+    @IsNumber()
+    average?: number;
 }
