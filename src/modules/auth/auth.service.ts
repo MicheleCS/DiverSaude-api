@@ -6,6 +6,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { UserRepository } from 'shared/repositories/user.repository';
 import { LoginDTO } from 'shared/dto/login.dto';
 import { RoleRepository } from 'shared/repositories/role.repository';
+import { usernameOrPasswordInvalid } from './constants';
 
 @Injectable()
 export class AuthService {
@@ -33,12 +34,14 @@ export class AuthService {
 
   async login(user: LoginDTO) {
     const userFinded = await this.userRepository.findByEmail(user.email);
+    //if (this.encryption.compareHash(user.password, userFinded.password)) {throw new UnauthorizedException(usernameOrPasswordInvalid);}
     const roles = await this.roleRepository.findOneRole(userFinded.role_id)
     const payload = { email: user.email, sub: userFinded.id };
     const token = await this.jwtService.sign(payload);
     return {
-      access_token: token,
-      userRole: roles.name
+      accessToken: token,
+      userRole: roles.name,
+      userId: userFinded.id
     };
   }
 }

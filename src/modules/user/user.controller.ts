@@ -35,7 +35,8 @@ export class UserController {
       }),
     )
     async findAll(@Query() dto: GetAllUserRequestDTO){
-      return await this.userService.findAll(dto);
+      const findedUsers = await this.userService.findAll(dto);
+      return instanceToInstance(findedUsers)
     }
 
     @UseGuards(JwtAuthGuard)
