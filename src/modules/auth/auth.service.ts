@@ -34,13 +34,16 @@ export class AuthService {
 
   async login(user: LoginDTO) {
     const userFinded = await this.userRepository.findByEmail(user.email);
-    //if (this.encryption.compareHash(user.password, userFinded.password)) {throw new UnauthorizedException(usernameOrPasswordInvalid);}
+    const hashed = await this.encryption.compareHash(user.password, userFinded.password)
+    if (!hashed) {
+      throw new UnauthorizedException(usernameOrPasswordInvalid);
+    }
     const roles = await this.roleRepository.findOneRole(userFinded.role_id)
     const payload = { email: user.email, sub: userFinded.id };
     const token = await this.jwtService.sign(payload);
     return {
       accessToken: token,
-      //userRole: roles.name,
+      userRole: roles.name,
       userId: userFinded.id
     };
   }

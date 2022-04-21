@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { ConflictException, Inject, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'shared/database/entities/user.entity';
 import { CreateUserRequestDTO } from 'shared/dto/createUserRequest.dto';
@@ -8,6 +8,8 @@ import { UpdateUserRequestDTO } from 'shared/dto/updateUserRequest.dto';
 import { BcryptProvider } from 'shared/providers/encrypt/bcrypt.provider';
 import { UserRepository } from 'shared/repositories/user.repository';
 import { EntityNotFoundError } from 'typeorm';
+import { RoleRepository } from 'shared/repositories/role.repository';
+import { Role } from 'shared/database/entities/role.entity';
 
 @Injectable()
 export class UserService {
@@ -16,9 +18,19 @@ export class UserService {
     private repository: UserRepository, 
     @Inject('ENCRYPT_PROVIDER') 
     private encryption: BcryptProvider,
+    @InjectRepository(RoleRepository)
+    private roleRepository: RoleRepository,
   ) {}
 
   async create(dto: CreateUserRequestDTO){
+    const roleFinded = await this.roleRepository.findOneRole(dto.role_id)
+    if (!roleFinded) {
+      throw new NotFoundException('role-not-found')
+    }
+    let userFinded = await this.repository.findByEmail(dto.email)
+    if (userFinded) {
+      throw new ConflictException('email-already-exists')
+    }
     const hashedPassword = await this.encryption.createHash(dto.password)
     return await this.repository.createUser({...dto, password: hashedPassword});
   }

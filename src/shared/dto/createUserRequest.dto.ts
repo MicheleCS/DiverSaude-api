@@ -23,6 +23,11 @@ export class CreateUserRequestDTO {
 
     @ApiProperty()
     @IsString()
+    @IsNotEmpty()
+    role_id: string;
+
+    @ApiProperty()
+    @IsString()
     @IsOptional()
     gender?: string;
 
