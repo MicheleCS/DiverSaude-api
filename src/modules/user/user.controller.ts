@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, Query, Request, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, Query, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "modules/auth/jwt-auth.guards";
 import { instanceToInstance } from "class-transformer";

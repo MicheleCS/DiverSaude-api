@@ -4,20 +4,20 @@ export class CreateUserDTO {
     password: string;
     cpf: string;
     gender?: string;
-    cellPhone?:number;
+    cellPhone?: string;
     crmCrp?: string;
     specialty?: string;
     street?: string;
-    number?: number;
+    number: string;
     neighborhood?: string;
     city?: string;
     satate?:string;
-    value?: number;
-    phone?:number;
+    value?: string;
+    phone?: string;
     description?: string;
     courses?: string;
     healthPlan?: string;
-    bathroomSpecific?: boolean;
+    bathroomSpecific?: string;
     linkedin?: string;
     attendance?:string;
 }

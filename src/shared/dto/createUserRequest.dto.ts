@@ -1,6 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsBoolean, IsEmpty, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
-import { Column } from "typeorm";
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
 
 export class CreateUserRequestDTO {
     @ApiProperty()
@@ -27,9 +26,9 @@ export class CreateUserRequestDTO {
     gender?: string;
 
     @ApiProperty()
-    @IsNumber()
+    @IsString()
     @IsOptional()
-    cellPhone?: number;
+    cellPhone?: string;
 
     @ApiProperty()
     @IsString()
@@ -37,9 +36,9 @@ export class CreateUserRequestDTO {
     street?: string;
 
     @ApiProperty()
-    @IsNumber()
+    @IsString()
     @IsOptional()
-    number?: number;
+    number?: string;
 
     @ApiProperty()
     @IsString()
@@ -67,14 +66,14 @@ export class CreateUserRequestDTO {
     specialty?: string;
 
     @ApiProperty()
-    @IsNumber()
+    @IsString()
     @IsOptional()
-    phone?: number;
+    phone?: string;
 
     @ApiProperty()
-    @IsNumber()
+    @IsString()
     @IsOptional()
-    value?: number;
+    value?: string;
 
     @ApiProperty()
     @IsString()
@@ -92,9 +91,9 @@ export class CreateUserRequestDTO {
     healthPlan?: string;
 
     @ApiProperty()
-    @IsBoolean()
+    @IsString()
     @IsOptional()
-    bathroomSpecific?: boolean;
+    bathroomSpecific?: string;
 
     @ApiProperty()
     @IsString()

@@ -5,7 +5,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from 'modules/user/user.module';import { BcryptProvider } from 'shared/providers/encrypt/bcrypt.provider';
 import { RoleRepository } from 'shared/repositories/role.repository';
 import { UserRepository } from 'shared/repositories/user.repository';
-;
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { jwtConstants } from './constants';

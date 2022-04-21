@@ -1,4 +1,4 @@
-# camp-api
+# DiverSaúde-api
 NESTJS
 O Nest é uma estrutura para a criação de API, eficientes e escalaveis. Utilizando o JavaScript e construido com o suporte TypeScript.
 

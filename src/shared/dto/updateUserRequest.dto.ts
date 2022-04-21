@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsBoolean, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class UpdateUserRequestDTO {
 
@@ -34,9 +34,9 @@ export class UpdateUserRequestDTO {
     gender?: string;
 
     @ApiProperty()
-    @IsNumber()
+    @IsString()
     @IsOptional()
-    cellPhone?: number;
+    cellPhone?: string;
 
     @ApiProperty()
     @IsString()
@@ -44,9 +44,9 @@ export class UpdateUserRequestDTO {
     street?: string;
 
     @ApiProperty()
-    @IsNumber()
+    @IsString()
     @IsOptional()
-    number?: number;
+    number?: string;
 
     @ApiProperty()
     @IsString()
@@ -74,17 +74,18 @@ export class UpdateUserRequestDTO {
     specialty?: string;
 
     @ApiProperty()
-    @IsNumber()
+    @IsString()
     @IsOptional()
-    phone?: number;
-
-    @ApiProperty()
-    @IsNumber()
-    @IsOptional()
-    value?: number;
+    phone?: string;
 
     @ApiProperty()
     @IsString()
+    @IsOptional()
+    value?: String;
+
+    @ApiProperty()
+    @IsString()
+    @IsOptional()
     description?: string;
 
     @ApiProperty()
@@ -98,9 +99,9 @@ export class UpdateUserRequestDTO {
     healthPlan?: string;
 
     @ApiProperty()
-    @IsBoolean()
+    @IsString()
     @IsOptional()
-    bathroomSpecific?: boolean;
+    bathroomSpecific?: string;
 
     @ApiProperty()
     @IsString()
@@ -124,5 +125,6 @@ export class UpdateUserRequestDTO {
 
     @ApiProperty()
     @IsNumber()
+    @IsOptional()
     average?: number;
 }
