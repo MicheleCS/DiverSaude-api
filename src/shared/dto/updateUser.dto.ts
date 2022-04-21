@@ -1,11 +1,12 @@
 export class UpdateUserDTO {
-    id: string;
+    id?: string;
     name?: string;
     phone?: string;
     cellPhone?: string;
     gender?: string;
     specialty?: string;
     street?: string;
+    number?: string;
     neighborhood?: string;
     city?: string;
     satate?:string;

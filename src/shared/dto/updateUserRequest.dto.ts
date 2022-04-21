@@ -6,7 +6,7 @@ export class UpdateUserRequestDTO {
     @ApiProperty()
     @IsString()
     @IsNotEmpty()
-    id: string;
+    id?: string;
 
     @ApiProperty()
     @IsString()

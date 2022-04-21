@@ -40,7 +40,7 @@ export class AuthService {
     const token = await this.jwtService.sign(payload);
     return {
       accessToken: token,
-      userRole: roles.name,
+      //userRole: roles.name,
       userId: userFinded.id
     };
   }

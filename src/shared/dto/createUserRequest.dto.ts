@@ -39,6 +39,11 @@ export class CreateUserRequestDTO {
     @ApiProperty()
     @IsString()
     @IsOptional()
+    number?: string;
+
+    @ApiProperty()
+    @IsString()
+    @IsOptional()
     neighborhood?: string;
 
     @ApiProperty()

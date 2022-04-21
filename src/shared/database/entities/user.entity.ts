@@ -53,6 +53,11 @@ export class User {
   @ApiProperty()
   @IsString()
   @Column({nullable: true})
+  number?: string;
+
+  @ApiProperty()
+  @IsString()
+  @Column({nullable: true})
   neighborhood?: string;
 
   @ApiProperty()
@@ -114,11 +119,6 @@ export class User {
   @IsString()
   @Column({ nullable: true})
   attendance?: string;
-
-  @ApiProperty()
-  @IsString()
-  @Column({ nullable: true})
-  experience?: string;
 
   @ApiProperty()
   @IsNumber()

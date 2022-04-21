@@ -8,6 +8,7 @@ export class CreateUserDTO {
     crmCrp?: string;
     specialty?: string;
     street?: string;
+    number?: string;
     neighborhood?: string;
     city?: string;
     satate?:string;
