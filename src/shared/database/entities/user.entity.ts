@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Exclude } from 'class-transformer';
-import { IsBoolean, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from 'typeorm';
 import { Role } from './role.entity';
 
@@ -41,7 +41,7 @@ export class User {
   gender?: string;
 
   @ApiProperty()
-  @IsNumber()
+  @IsString()
   @Column({nullable: true})
   cellPhone?: string;
 
@@ -51,7 +51,7 @@ export class User {
   street?: string;
   
   @ApiProperty()
-  @IsNumber()
+  @IsString()
   @Column({nullable: true})
   number?: string;
 
@@ -81,12 +81,12 @@ export class User {
   specialty?: string;
 
   @ApiProperty()
-  @IsNumber()
+  @IsString()
   @Column({ nullable: true})
   phone?: string;
  
   @ApiProperty()
-  @IsNumber()
+  @IsString()
   @Column({ nullable: true})
   value?: string;
 
@@ -106,7 +106,7 @@ export class User {
   healthPlan?: string;
 
   @ApiProperty()
-  @IsBoolean()
+  @IsString()
   @Column({ nullable: true})
   bathroomSpecific?: string;
 
@@ -119,6 +119,11 @@ export class User {
   @IsString()
   @Column({ nullable: true})
   attendance?: string;
+
+  @ApiProperty()
+  @IsString()
+  @Column({ nullable: true})
+  experience?: string;
 
   @ApiProperty()
   @IsNumber()
