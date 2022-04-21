@@ -23,6 +23,7 @@ export class CreateUserRequestDTO {
 
     @ApiProperty()
     @IsString()
+    @IsOptional()
     gender?: string;
 
     @ApiProperty()
@@ -34,11 +35,6 @@ export class CreateUserRequestDTO {
     @IsString()
     @IsOptional()
     street?: string;
-
-    @ApiProperty()
-    @IsString()
-    @IsOptional()
-    number?: string;
 
     @ApiProperty()
     @IsString()

@@ -49,11 +49,6 @@ export class User {
   @IsString()
   @Column({nullable: true})
   street?: string;
-  
-  @ApiProperty()
-  @IsString()
-  @Column({nullable: true})
-  number?: string;
 
   @ApiProperty()
   @IsString()

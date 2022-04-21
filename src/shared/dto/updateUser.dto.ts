@@ -6,7 +6,6 @@ export class UpdateUserDTO {
     gender?: string;
     specialty?: string;
     street?: string;
-    number?: string;
     neighborhood?: string;
     city?: string;
     satate?:string;
