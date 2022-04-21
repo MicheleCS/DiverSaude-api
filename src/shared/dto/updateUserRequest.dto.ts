@@ -10,18 +10,22 @@ export class UpdateUserRequestDTO {
 
     @ApiProperty()
     @IsString()
+    @IsOptional()
     name?: string;
 
     @ApiProperty()
     @IsString()
+    @IsOptional()
     email?: string;
 
     @ApiProperty()
     @IsString()
+    @IsOptional()
     password?: string;
 
     @ApiProperty()
     @IsString()
+    @IsOptional()
     cpf?: string;
 
     @ApiProperty()
