@@ -81,7 +81,7 @@ export class UpdateUserRequestDTO {
     @ApiProperty()
     @IsString()
     @IsOptional()
-    value?: String;
+    value?: string;
 
     @ApiProperty()
     @IsString()
