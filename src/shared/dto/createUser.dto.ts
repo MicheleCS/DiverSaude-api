@@ -18,6 +18,5 @@ export class CreateUserDTO {
     courses?: string;
     healthPlan?: string;
     bathroomSpecific?: string;
-    linkedin?: string;
     attendance?:string;
 }

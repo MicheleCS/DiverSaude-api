@@ -113,11 +113,6 @@ export class User {
   @ApiProperty()
   @IsString()
   @Column({ nullable: true})
-  linkedin?: string;
-
-  @ApiProperty()
-  @IsString()
-  @Column({ nullable: true})
   attendance?: string;
 
   @ApiProperty()
@@ -136,8 +131,7 @@ export class User {
   average?: number;
 
 
-
-
+  
   @OneToMany(() => Role, (Role) => Role.user)
   @JoinColumn({ name: 'role_id' })
   public roles?: Role;

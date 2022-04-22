@@ -20,7 +20,7 @@ export const config2: TypeOrmModuleOptions = {
     rejectUnauthorized: false,
   },
   entities: ['dist/**/*.entity{.ts,.js}'],
-  synchronize: true, // This for development
+  synchronize: true,
   autoLoadEntities: true,
 }
 

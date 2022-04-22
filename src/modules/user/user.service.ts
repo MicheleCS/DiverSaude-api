@@ -9,7 +9,6 @@ import { BcryptProvider } from 'shared/providers/encrypt/bcrypt.provider';
 import { UserRepository } from 'shared/repositories/user.repository';
 import { EntityNotFoundError } from 'typeorm';
 import { RoleRepository } from 'shared/repositories/role.repository';
-import { Role } from 'shared/database/entities/role.entity';
 
 @Injectable()
 export class UserService {

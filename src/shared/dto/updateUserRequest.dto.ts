@@ -106,11 +106,6 @@ export class UpdateUserRequestDTO {
     @ApiProperty()
     @IsString()
     @IsOptional()
-    linkedin?: string;
-
-    @ApiProperty()
-    @IsString()
-    @IsOptional()
     attendance?: string;
 
     @ApiProperty()

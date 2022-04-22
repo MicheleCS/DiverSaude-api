@@ -15,6 +15,5 @@ export class UpdateUserDTO {
     courses?: string;
     healthPlan?: string;
     bathroomSpecific?: string;
-    linkedin?: string;
     attendance?:string;
 }

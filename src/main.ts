@@ -17,7 +17,7 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-    .setTitle('Camp API')
+    .setTitle('DiverSaude')
     .setDescription('')
     .setVersion('1.0.0')
     .build();
