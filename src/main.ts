@@ -16,7 +16,7 @@ async function bootstrap() {
     },
   });
 
-  const config = new DocumentBuilder()
+  const config = new DocumentBuilder().addBearerAuth()
     .setTitle('DiverSaude')
     .setDescription('')
     .setVersion('1.0.0')
@@ -24,7 +24,6 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/v1/docs', app, document);
-  const options = new DocumentBuilder().addBearerAuth();
 
   app.setGlobalPrefix('api/v1');
   app.enableCors({credentials: true, origin: "*"});
