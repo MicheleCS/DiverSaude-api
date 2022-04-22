@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "modules/auth/jwt-auth.guards";
 import { instanceToInstance } from "class-transformer";
 import { CreateRoleRequestDTO } from "shared/dto/createRoleRequest.dto";
@@ -25,6 +25,7 @@ export class RoleController {
       return instanceToInstance(role);
     }
 
+    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     @Get()
     @HttpCode(200)
@@ -37,6 +38,7 @@ export class RoleController {
       return this.roleService.findAll();
     }
 
+    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     @Get(':id')
     @HttpCode(200)
@@ -49,6 +51,7 @@ export class RoleController {
       return await this.roleService.findOne(id);
     }
 
+    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     @Patch()
     @HttpCode(204)
@@ -61,6 +64,7 @@ export class RoleController {
       await this.roleService.update(updateRoleRequestDTO.id, updateRoleRequestDTO);
     }
 
+    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     @Delete(':id')
     @HttpCode(204)

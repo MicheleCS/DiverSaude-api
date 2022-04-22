@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, Query, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
-import { ApiBasicAuth, ApiTags } from "@nestjs/swagger";
+import { ApiBasicAuth, ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "modules/auth/jwt-auth.guards";
 import { instanceToInstance } from "class-transformer";
 import { CreateUserRequestDTO } from "shared/dto/createUserRequest.dto";
@@ -26,6 +26,7 @@ export class UserController {
       return instanceToInstance(user);
     }
 
+    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     @Get()
     @HttpCode(200)
@@ -39,7 +40,7 @@ export class UserController {
       return instanceToInstance(findedUsers)
     }
 
-    @ApiBasicAuth()
+    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     @Get(':id')
     @HttpCode(200)
@@ -52,7 +53,7 @@ export class UserController {
       return await this.userService.findOne(id);
     }
 
-    @ApiBasicAuth()
+    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     @Patch()
     @HttpCode(204)
@@ -65,7 +66,7 @@ export class UserController {
       await this.userService.update( updateUserRequestDTO);
     }
 
-    @ApiBasicAuth()
+    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     @Patch('evaluate')
     @HttpCode(204)
@@ -78,7 +79,7 @@ export class UserController {
       await this.userService.evaluate( evaluateDTO);
     }
 
-    @ApiBasicAuth()
+    @ApiBearerAuth()
     @UseGuards(JwtAuthGuard)
     @Delete(':id')
     @HttpCode(204)
