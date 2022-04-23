@@ -83,5 +83,5 @@ GET ONE > https://diversaude-api.herokuapp.com/api/v1/users/ (PASSAR ID USUÁRIO
 Para utilizar o Filtro de busca Profissional, o usuário deve passar a rota GET inserindo os demais campos
 GET > https://diversaude-api.herokuapp.com/api/v1/users/?specialty=psicologo&city=Belo horizonte&gender=trans
 
-O usuário que for fazer avaliação do Profissional, deve acessar a rota colocando o id e a nota no qual escolheu para avaliar
+O usuário que for fazer avaliação do Profissional, deve acessar a rota colocando o id do profissional e a nota no qual escolheu para avaliar
 PATCH > https://diversaude-api.herokuapp.com/api/v1/users/evaluate
