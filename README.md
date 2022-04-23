@@ -1,5 +1,7 @@
 # DiverSaúde-api
 NESTJS
+
+
 O Nest é uma estrutura para a criação de API, eficientes e escalaveis. Utilizando o JavaScript e construido com o suporte TypeScript.
 
 COMANDOS UTILIZADOS
@@ -49,4 +51,37 @@ COMANDOS UTILIZADOS:
 
 $ git add .
 $ git commit -m ""
-$ git push heoroku main
+$ git push heroku main
+
+----------------------
+
+GUIA API DIVERSAUDE
+
+O usuário deve criar um role_id
+POST > https://diversaude-api.herokuapp.com/api/v1/role
+
+Fazer o cadastro
+POST > https://diversaude-api.herokuapp.com/api/v1/users
+passando o role_id criado anteriormente
+
+Logar na aplicação 
+POST > https://diversaude-api.herokuapp.com/api/v1/auth/login
+Recebendo um Token_acess para consumir as demais rotas
+
+Demais rotas utilizadas 
+
+GET > https://diversaude-api.herokuapp.com/api/v1/users
+
+GET > https://diversaude-api.herokuapp.com/api/v1/role
+
+PATCH > https://diversaude-api.herokuapp.com/api/v1/users
+
+DELETE > https://diversaude-api.herokuapp.com/api/v1/users/ (PASSAR ID USUÁRIO)
+
+GET ONE > https://diversaude-api.herokuapp.com/api/v1/users/ (PASSAR ID USUÁRIO)
+
+Para utilizar o Filtro de busca Profissional, o usuário deve passar a rota GET inserindo os demais campos
+GET > https://diversaude-api.herokuapp.com/api/v1/users/?specialty=psicologo&city=Belo horizonte&gender=trans
+
+O usuário que for fazer avaliação do Profissional, deve acessar a rota colocando o id e a nota no qual escolheu para avaliar
+PATCH > https://diversaude-api.herokuapp.com/api/v1/users/evaluate
