@@ -17,7 +17,7 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder().addBearerAuth()
-    .setTitle('DiverSaude')
+    .setTitle('DiverSaúde')
     .setDescription('')
     .setVersion('1.0.0')
     .build();

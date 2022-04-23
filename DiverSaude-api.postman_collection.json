@@ -1,0 +1,473 @@
+{
+	"info": {
+		"_postman_id": "60a75e29-3892-4ff0-8e22-971c04308f93",
+		"name": "DiverSaude-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDkwMjk5OTQsImV4cCI6MTY0OTQ2MTk5NH0.p3OnIDUf9F6Rjs40o5TMrhd_-KfJZjBpWE_uyw0NTwE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"teste@email.com\",\r\n    \"password\": \"Teste\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://diversaude-api.herokuapp.com/api/v1/auth/login",
+									"protocol": "https",
+									"host": [
+										"diversaude-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwic3ViIjoiODFlYTJjM2MtMDk0NC00MDBmLWJkNzktZDEwMzNlY2ZhOWRkIiwiaWF0IjoxNjUwMzc2MjgxLCJleHAiOjE2NTA4MDgyODF9.ZgzdHlf9ZsZHQzqqI21uOpwp7njPyVFPbJbxv-DCl1o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDg4MTE2NDQsImV4cCI6MTY0OTI0MzY0NH0.U8P0nsgEsP8e1UmGzEnv9N6urCtIgmiipOq3JfdhhS4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"teste\",\r\n  \"email\": \"teste@email.com\",\r\n  \"password\": \"Teste\",\r\n  \"cpf\": \"7777599777\",\r\n \"gender\": \"teste\",\r\n  \"role_id\": \"c68fb76f-f2bd-41b6-a180-1e2b72ffaa45\",\r\n  \"phone\": \"teste\",\r\n  \"cellPhone\": \"teste\",\r\n  \"crmCrp\": \"12938721\",\r\n   \"specialty\": \"clinico\",\r\n  \"street\": \"teste\",\r\n  \"number\": \"teste\",\r\n  \"neighborhood\": \"teste\",\r\n  \"city\": \"teste \",\r\n  \"state\": \"teste\",\r\n  \"price\": \"teste\",\r\n  \"description\": \"teste\",\r\n  \"courses\": \"teste\",\r\n  \"healthPlan\": \"teste\",\r\n  \"bathroomSpecific\": \"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NDkzMzM1MjMsImV4cCI6MTY0OTc2NTUyM30.fNn98U00f6y_Jg7CdEh5hmAxfoWFxBgWnzkUXD2VQ5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n       \"id\": \"c51b0e6e-d55d-4ba4-89b6-d0eaaf979576\",\r\n        \"name\": \"Teste\",\r\n        \"email\": \"Teste@email.com\",\r\n        \"password\": \"$2a$10$6VW9ZYjBZzt7fAGQDxrIOeR55CbjN.Vve3fJphfN51RucvrG5MJ4W\",\r\n        \"cpf\": \"1125484841\",\r\n        \"role_id\": \"6452f500-635a-4516-a999-bfad829d1ce7\",\r\n        \"gender\": \"teste\",\r\n        \"cellPhone\": 684894,\r\n        \"street\": \"teste\",\r\n        \"number\": 1,\r\n        \"neighborhood\": \"teste bairro\",\r\n        \"city\": \"teste\",\r\n        \"state\": \"teste\",\r\n        \"crmCrp\": \"teste\",\r\n        \"specialty\": \"teste\",\r\n        \"phone\": 684894,\r\n        \"value\": null,\r\n        \"description\": \"teste\",\r\n        \"courses\": \"teste\",\r\n        \"healthPlan\": \"teste\",\r\n        \"bathroomSpecific\": true,\r\n        \"linkedin\": \"teste\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYUBlbWFpbC5jb20iLCJzdWIiOiIxYzM5NThmNi0zNmNmLTRiM2MtYTNmNi1hYjE5ODQyNzAwNWQiLCJpYXQiOjE2NTA1NzM1MTgsImV4cCI6MTY1MTAwNTUxOH0.O976XQcTBQWjYSCepAnVnSI0vs4joUx6rDEnQbNaNho",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/users/1c3958f6-36cf-4b3c-a3f6-ab198427005d",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"1c3958f6-36cf-4b3c-a3f6-ab198427005d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar 1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuYUBlbWFpbC5jb20iLCJzdWIiOiJjNzk2YjY2MS04NTg5LTRlYzItOWQyOS0wOGQ5OGNkZGM2NzAiLCJpYXQiOjE2NTA1Nzg5ODEsImV4cCI6MTY1MTAxMDk4MX0.77I_Vg7w_bAtOQY-YDzkjaqY4I8hUD6rZdSLvR4Vd7w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/users/c796b661-8589-4ec2-9d29-08d98cddc670",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"c796b661-8589-4ec2-9d29-08d98cddc670"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Evaluate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiYyIsInN1YiI6IjU4NDhjNzNkLWM3ZDAtNGY1NC05ZjY5LTAwMTYxNjhkMDdlYSIsImlhdCI6MTY1MDIwMzQ4MiwiZXhwIjoxNjUwNjM1NDgyfQ.s4_7Hd4EHou-AJ_HhvnF5r9zaTm_2LwNrY1aJxYmh74",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"id\": \"37e15638-af9d-43dc-a533-5eec9f934bd2\",\r\n   \"assessment\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/users/evaluate",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"evaluate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Listar Role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwic3ViIjoiODFlYTJjM2MtMDk0NC00MDBmLWJkNzktZDEwMzNlY2ZhOWRkIiwiaWF0IjoxNjUwNDg5NTYzLCJleHAiOjE2NTA5MjE1NjN9.pKy37VtB3e0SI39nr9dc-HMY8gP7nLR3-QFON_f598U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/roles",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Trans\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/roles",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Role",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"cb72cf85-861a-4f57-911b-1e754dd01589\",\r\n    \"name\": \"name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/roles",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwic3ViIjoiODFlYTJjM2MtMDk0NC00MDBmLWJkNzktZDEwMzNlY2ZhOWRkIiwiaWF0IjoxNjUwNDg5NTYzLCJleHAiOjE2NTA5MjE1NjN9.pKy37VtB3e0SI39nr9dc-HMY8gP7nLR3-QFON_f598U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/roles/ff14da31-2551-4387-bfec-e5c35fd97a3c",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles",
+								"ff14da31-2551-4387-bfec-e5c35fd97a3c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista 1 Role",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://diversaude-api.herokuapp.com/api/v1/roles/cb72cf85-861a-4f57-911b-1e754dd01589",
+							"protocol": "https",
+							"host": [
+								"diversaude-api",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"roles",
+								"cb72cf85-861a-4f57-911b-1e754dd01589"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
