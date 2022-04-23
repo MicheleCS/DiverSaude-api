@@ -1,5 +1,5 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post, Query, UseGuards, UsePipes, ValidationPipe } from "@nestjs/common";
-import { ApiBasicAuth, ApiBearerAuth, ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "modules/auth/jwt-auth.guards";
 import { instanceToInstance } from "class-transformer";
 import { CreateUserRequestDTO } from "shared/dto/createUserRequest.dto";
